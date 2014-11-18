@@ -1,5 +1,13 @@
 <%= form_for @employment do |f| %>
-
+  <% if @employment.errors.present? %>
+    <div class="alert alert-danger">
+      <% @employment.errors.full_messages.each do |error_message| %>
+        <p>
+          <%= error_message %>
+        </p>
+      <% end %>
+    </div>
+  <% end %>
   <div class="well">
     <p>
       <strong>Instructions</strong>
